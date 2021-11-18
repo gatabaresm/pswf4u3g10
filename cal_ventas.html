@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNAD - F4U3 - Diseño e implementacion backend - 2021</title>
+    <meta name="description" content="El propósito de este sitio es Implementar sitios web interactivos haciendo uso de lenguajes de programación web del lado del servidor, bases de datos y librerías para la ejecución proyectos web que den solución a problemáticas planteadas."/>
+    <meta name="keywords" content="aplicativo, javascript, frameworks, proyecto web, etiquetas, HTML, Bootstrap, PHP, MySQL"/>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <header class="container">
+      <h1 class="col-lg-12" style="text-align: center;">Utilidades de la Empresa “PC Electronics”</h1>    
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"  id="sticky">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul
+              class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+              style="--bs-scroll-height: 100px">
+              <a class="navbar-brand" href="index.html">PC Electronics</a>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarScrollingDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Administrador
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarScrollingDropdown">
+                  <li>
+                    <a class="dropdown-item" href="php/crear_bd.php">Crear Base de Datos</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="php/crear_tabla.php">Crear tabla</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="php/pdf.php" target="_blank">Reportes PDF</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="php/backup.php">Backup</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarScrollingDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Inventario
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarScrollingDropdown">
+                  <li>
+                    <a class="dropdown-item" href="registrar.html">Registrar Producto</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="modificar.html">Modificar Producto</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="borrar.html">Borrar Producto</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="consultar.html">Consultar Producto</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                  <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarScrollingDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Utilidades
+                </a>
+                  <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarScrollingDropdown">
+                  <li>
+                    <a class="dropdown-item" href="cal_ventas.html">Cálculo Valor de Venta de Producto</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="cal_equi_datos.html">Cálculo Equivalencia de tamaño de Datos</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="autores.html">
+                  Autores
+                </a>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <script>
+        function calcular(){
+            var a = document.f1.a.value;
+            var b = document.f1.b.value;
+            var c = document.f1.c.value;
+            var r1 = document.f1.d.value;
+            var r2 = document.f1.e.value;
+          r1=parseFloat(a)+(parseFloat(a)*(parseFloat(b)/100))+(parseFloat(a)*(parseFloat(c)/100));
+          r2=parseFloat(a)*(parseFloat(b)/100);
+          document.f1.d.value=r1;
+          document.f1.e.value=r2;
+        }
+         </script>
+
+      <main class="container">
+        <section class="row">
+            <h2 style="text-align: center;">Cálculo del Valor de Venta del Producto</h2><br/>
+            <article class="col-lg-4"></article>
+            <article class="col-lg-4">
+              <form name="f1" action="calculadora.html" method="POST">
+                  <label for="Valor de la Compra">Valor de la compra $:</label><br/>
+                  <input type="text" class="form-control" id="a" placeholder="Ingrese el valor de la compra" name="a">
+                  <label for="% Utilidad">% de utilidad:</label><br/>
+                  <input type="text" class="form-control" id="b" placeholder="Ingrese el porcentaje de la utilidad" name="b">
+                  <label for="% IVA">% del IVA:</label><br/>
+                  <input type="text" class="form-control" id="c" placeholder="Ingrese el porcentaje del IVA" name="c">
+                  <br/>
+                  <input type="Button" name="" value="Calcular" onclick="calcular()" class="btn btn-primary">
+                  <input type="Button" name="" value="Limpiar" onclick="reset()" class="btn btn-primary">
+                  <br/><br/>
+                  <label for="resultado1">Valor de venta $:</label>
+                  <input type="text" class="form-control" id="d" name="d" placeholder="Este es el precio de venta">
+                  <label for="resultado2">Ganancia $:</label>
+                  <input type="text" class="form-control" id="e" name="e" placeholder="Este es la Ganancia">
+                  <br/>
+                </form>
+            </article>
+            <article class="col-lg-4"></article>
+          </section>
+    </main>
+
+    <footer id="footer">
+      <p class="pie">
+        <a name='acercade'></a>
+        <b>Director/Tutor: </b>Francisco Javier Hilarión Novoa<br/>
+        <b>Skype: </b>frankelectro<br/>
+        <b>Email: </b>francisco.hilarion@unad.edu.co<br/><br/>
+        <b>Universidad Nacional Abierta y a Distancia UNAD de Colombia</b><br/>
+        Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional - SNIES 2102<br/>
+        En Bogotá D.C. (Colombia) Tel: <b>(+57)(1)375 9500</b>  Línea gratuita nacional: <b>01 8000 115223</b><br/><br/>
+        <b>Fecha de Creación:</b> lunes 17 de noviembre de 2021<b> / Fecha de Actualización:</b> jueves 18 de noviembre de 2021
+      </p>
+    </footer>
+</body>
+</html>
