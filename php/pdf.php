@@ -4,7 +4,6 @@ require('config.php');
 
 date_default_timezone_set("America/Bogota");
 
-
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
@@ -32,19 +31,15 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($reg = mysqli_fetch_assoc($result)) {
 
-$pdf->Cell(20,20, $reg['codigo'], 0);
+    $pdf->Cell(20,20, $reg['codigo'], 0);
+    $pdf->Cell(40,20, utf8_decode($reg['nombre']), 0);
+    $pdf->Cell(40,20, utf8_decode($reg['marca']), 0);
+    $pdf->Cell(20,20, utf8_decode($reg['precio']), 0);
+    $pdf->Cell(20,20, utf8_decode($reg['cantidad']), 0);
 
-$pdf->Cell(40,20, utf8_decode($reg['nombre']), 0);
+    $pdf->Ln(10);
 
-$pdf->Cell(40,20, utf8_decode($reg['marca']), 0);
-
-$pdf->Cell(20,20, utf8_decode($reg['precio']), 0);
-
-$pdf->Cell(20,20, utf8_decode($reg['cantidad']), 0);
-
-$pdf->Ln(10);
-
-}
+    }
 }
 
 $pdf->Output();
