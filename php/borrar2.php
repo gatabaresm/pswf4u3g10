@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNAD - F4U3 - Diseño e implementacion backend - 2021 - Registrar Producto</title>
+    <title>UNAD - F4U3 - Diseño e implementacion backend - 2021 - Modificar Producto</title>
     <meta name="description" content="El propósito de este sitio es Implementar sitios web interactivos haciendo uso de lenguajes de programación web del lado del servidor, bases de datos y librerías para la ejecución proyectos web que den solución a problemáticas planteadas."/>
     <meta name="keywords" content="aplicativo, javascript, frameworks, proyecto web, etiquetas, HTML, Bootstrap, PHP, MySQL"/>
     <link rel="stylesheet" href="css/estilos.css">
@@ -31,60 +31,105 @@
 require('config.php');
 
 $codigo = $_POST['codigo'];
-$nombre = $_POST['nombre'];
-$marca = $_POST['marca'];
-$precio = $_POST['precio'];
-$cantidad = $_POST['cantidad'];
 
-$sql = "INSERT INTO tabla10 (codigo, nombre, marca, precio, cantidad) VALUES ('$codigo', '$nombre', '$marca', '$precio', '$cantidad')";
 
-if (mysqli_query($conn, $sql)) {
+$sql = "SELECT * FROM tabla10 WHERE codigo=$codigo";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+
+//Eliminar
+$sql2 = "DELETE FROM tabla10 WHERE codigo=$codigo";
+
+if (mysqli_query($conn, $sql2)) {
 
 ?>
+
 <!-- Ventana Modal -->
     <div class="modal-dialog">
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Excelente</h4>
-          <button class="close" onclick="location.href='../registrar.html'">&times;</button>
+          <h4 class="modal-title">Eliminando Producto</h4>
+          <button class="close" onclick="location.href='../borrar.html'">&times;</button>
         </div>
         <!-- Modal body -->
         <div class="modal-body">
-          Producto Registrado Safisfactoriamente
+            <?php
+            echo "Producto eliminado satisfactoriamente";
+            ?>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-danger" onclick="location.href='../registrar.html'">Cerrar</button>
+          <button class="btn btn-danger" onclick="location.href='../borrar.html'">Cerrar</button>
         </div>
       </div>
     </div>
+
  <?php
-} else 
-{
+
+} else {
+
 ?>
+
 <!-- Ventana Modal -->
     <div class="modal-dialog">
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Error</h4>
-          <button class="close" onclick="location.href='../registrar.html'">&times;</button>
+          <h4 class="modal-title">Error eliminando Producto</h4>
+          <button class="close" onclick="location.href='../borrar.html'">&times;</button>
         </div>
         <!-- Modal body -->
         <div class="modal-body">
-          <?php
-          echo "Error Registrando el Producto: <br>" . $sql . "<br>" . mysqli_error($conn);
-          ?> 
+            <?php
+            echo "Error eliminando producto: <br> " . mysqli_error($conn);
+            ?>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-danger" onclick="location.href='../registrar.html'">Cerrar</button>
+          <button class="btn btn-danger" onclick="location.href='../borrar.html'">Cerrar</button>
         </div>
       </div>
     </div>
+
  <?php
+
 }
+
+    }
+
+} else {
+
+?>
+
+<!-- Ventana Modal -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Error eliminando Producto</h4>
+          <button class="close" onclick="location.href='../borrar.html'">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+ 		<?php
+           echo "El Producto no existe <br> ";
+		?>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button class="btn btn-danger" onclick="location.href='../borrar.html'">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+ <?php
+
+}
+
 mysqli_close($conn);
 ?>
 </body>

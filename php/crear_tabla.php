@@ -31,7 +31,7 @@ require('config.php');
 
 // sql para crear la tabla
 $sql = "CREATE TABLE tabla10 (
-codigo VARCHAR(15) PRIMARY KEY,
+codigo INT(10) PRIMARY KEY,
 nombre VARCHAR(15),
 marca VARCHAR(15),
 precio INT(20),
