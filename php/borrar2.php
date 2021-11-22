@@ -23,8 +23,21 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script> 
+      $(function(){
+        $("#header").load("../header.html"); 
+        $("#footer").load("../footer.html"); 
+        $("#nav").load("nav.html"); 
+      });
+    </script>
 </head>
 <body>
+    <link rel="stylesheet" href="../css/estilos2.css">
+    <header class="container" id="header"></header>
+
+    <section id="nav"></section>
+
+<main class="container">
 
  <?php
 
@@ -132,5 +145,8 @@ if (mysqli_query($conn, $sql2)) {
 
 mysqli_close($conn);
 ?>
+
+    </main>
+    <footer id="footer" id="../footer"></footer>
 </body>
 </html>

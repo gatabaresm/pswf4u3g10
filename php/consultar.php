@@ -23,116 +23,24 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+    <script> 
+      $(function(){
+        $("#header").load("../header.html"); 
+        $("#footer").load("../footer.html"); 
+        $("#nav").load("nav.html"); 
+      });
+    </script>
 </head>
 <body>
-    <header class="container">
-      <h1 class="col-lg-12" style="text-align: center;">Utilidades de la Empresa “PC Electronics”</h1>    
-    </header>
+    <link rel="stylesheet" href="../css/estilos2.css">
+    <header class="container" id="header"></header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"  id="sticky">
-        <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarScroll"
-            aria-controls="navbarScroll"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul
-              class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-              style="--bs-scroll-height: 100px">
-              <a class="navbar-brand" href="../index.html">PC Electronics</a>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarScrollingDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Administrador
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarScrollingDropdown">
-                  <li>
-                    <a class="dropdown-item" href="crear_bd.php">Crear Base de Datos</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="crear_tabla.php">Crear tabla</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="pdf.php" target="_blank">Reportes PDF</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="backup.php">Backup</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarScrollingDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Inventario
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarScrollingDropdown">
-                  <li>
-                    <a class="dropdown-item" href="../registrar.html">Registrar Producto</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="../modificar.html">Modificar Producto</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="../borrar.html">Borrar Producto</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="../consultar.html">Consultar Producto</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                  <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarScrollingDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Utilidades
-                </a>
-                  <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarScrollingDropdown">
-                  <li>
-                    <a class="dropdown-item" href="../cal_ventas.html">Cálculo Valor de Venta de Producto</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="../cal_equi_datos.html">Cálculo Equivalencia de tamaño de Datos</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../autores.html">
-                  Autores
-                </a>
-            </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <section id="nav"></section>
 
 <main class="container">
  
@@ -182,7 +90,7 @@ if (mysqli_num_rows($result) > 0) {
   ?>
 
 <!-- Ventana Modal -->
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos2.css">
     <div class="modal-dialog">
       <div class="modal-content">
         <!-- Modal Header -->
@@ -211,17 +119,6 @@ if (mysqli_num_rows($result) > 0) {
   ?> 
 
     </main>
-    <footer id="footer">  
-      <p class="pie">
-        <a name='acercade'></a>
-        <b>Director/Tutor: </b>Francisco Javier Hilarión Novoa<br/>
-        <b>Skype: </b>frankelectro<br/>
-        <b>Email: </b>francisco.hilarion@unad.edu.co<br/><br/>
-        <b>Universidad Nacional Abierta y a Distancia UNAD de Colombia</b><br/>
-        Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional - SNIES 2102<br/>
-        En Bogotá D.C. (Colombia) Tel: <b>(+57)(1)375 9500</b>  Línea gratuita nacional: <b>01 8000 115223</b><br/><br/>
-        <b>Fecha de Creación:</b> lunes 17 de noviembre de 2021<b> / Fecha de Actualización:</b> sabado 20 de noviembre de 2021
-      </p>
-    </footer>
+    <footer id="footer" id="../footer"></footer>
 </body>
 </html>

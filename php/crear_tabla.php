@@ -22,8 +22,26 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+    <script> 
+      $(function(){
+        $("#header").load("../header.html"); 
+        $("#footer").load("../footer.html"); 
+        $("#nav").load("nav.html"); 
+      });
+    </script>
 </head>
 <body>
+    <link rel="stylesheet" href="../css/estilos2.css">
+    <header class="container" id="header"></header>
+
+    <section id="nav"></section>
+
+<main class="container">
 
 <?php
 
@@ -85,5 +103,9 @@ if (mysqli_query($conn, $sql)) {
  }
  mysqli_close($conn);
  ?>
+
+</main>
+<footer id="footer" id="footer"></footer>
+
 </body>
 </html>
