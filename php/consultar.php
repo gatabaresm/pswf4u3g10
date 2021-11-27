@@ -119,6 +119,10 @@ if (mysqli_num_rows($result) > 0) {
   ?> 
 
     </main>
+<<<<<<< HEAD
     <footer id="footer"></footer>
+=======
+    <footer id="footer" id="../footer"></footer>
+>>>>>>> 2_GAT_Todo
 </body>
 </html>

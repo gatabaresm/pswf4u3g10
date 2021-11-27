@@ -147,6 +147,10 @@ mysqli_close($conn);
 ?>
 
     </main>
+<<<<<<< HEAD
     <footer id="footer"></footer>
+=======
+    <footer id="footer" id="../footer"></footer>
+>>>>>>> 2_GAT_Todo
 </body>
 </html>

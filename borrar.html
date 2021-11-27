@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNAD - F4U3 - Diseño e implementacion backend - 2021</title>
+    <title>UNAD - F4U3 - Diseño e implementacion backend - 2021 - Borrar Producto</title>
     <meta name="description" content="El propósito de este sitio es Implementar sitios web interactivos haciendo uso de lenguajes de programación web del lado del servidor, bases de datos y librerías para la ejecución proyectos web que den solución a problemáticas planteadas."/>
     <meta name="keywords" content="aplicativo, javascript, frameworks, proyecto web, etiquetas, HTML, Bootstrap, PHP, MySQL"/>
     <link rel="stylesheet" href="css/estilos.css">
@@ -14,144 +14,59 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+    <script> 
+      $(function(){
+        $("#header").load("header.html"); 
+        $("#footer").load("footer.html"); 
+        $("#nav").load("nav.html"); 
+      });
+    </script>
 </head>
 <body>
-    <header class="container">
-      <h1 class="col-lg-12" style="text-align: center;">Utilidades de la Empresa “PC Electronics”</h1>    
-    </header>
+    <header class="container" id="header"></header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"  id="sticky">
-        <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarScroll"
-            aria-controls="navbarScroll"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul
-              class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-              style="--bs-scroll-height: 100px">
-              <a class="navbar-brand" href="index.html">PC Electronics</a>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarScrollingDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Administrador
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarScrollingDropdown">
-                  <li>
-                    <a class="dropdown-item" href="php/crear_bd.php">Crear Base de Datos</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="php/crear_tabla.php">Crear tabla</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="php/pdf.php" target="_blank">Reportes PDF</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="php/backup.php">Backup</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarScrollingDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Inventario
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarScrollingDropdown">
-                  <li>
-                    <a class="dropdown-item" href="registrar.html">Registrar Producto</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="modificar.html">Modificar Producto</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="borrar.html">Borrar Producto</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="consultar.html">Consultar Producto</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                  <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarScrollingDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Utilidades
-                </a>
-                  <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarScrollingDropdown">
-                  <li>
-                    <a class="dropdown-item" href="cal_ventas.html">Cálculo Valor de Venta de Producto</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="cal_equi_datos.html">Cálculo Equivalencia de tamaño de Datos</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="autores.html">
-                  Autores
-                </a>
-            </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <section id="nav"></section>
 
     <main class="container">
-        <section class="row">
-            <article class="col-lg-12">
-                <h2 style="text-align: center;">Módulo "Borrar Producto"</h2><br/>
-            </article>
-         </section>
-         <br>
-         <br>
-         <link rel="stylesheet" href="css/estilos.css">
-        <section class="borrar-producto">
-          <h4>Formulario para Borrar Productos</h4>
-              <input class="controles_borrar" type="text" name="Codigo Producto" id="codigo_pruducto" placeholder="Buscar codigo del producto">
-              <input class="boton" type="button" value="Consultar Producto por Codigo">
-              <input class="controles_borrar" type="text" name="Nombre Producto" id="nombre_pruducto" placeholder="Nombre del producto">
-              <input class="controles_borrar" type="text" name="Marca Producto" id="marca_pruducto" placeholder="Marca del producto">
-              <input class="controles_borrar" type="text" name="Precio Compra" id="precio_compra" placeholder="Precio del producto">
-              <input class="controles_borrar" type="text" name="cantidad Producto" id="cantidad_producto" placeholder="Cantidad comprada">
-              <input class="boton" type="button" value="Borrar Producto por Codigo">
+        
+        <link rel="stylesheet" href="css/estilos.css">
+        <br>
+        <section class="registrar-producto">
+          <h4>Borrar Productos</h4>
+          <form action="php/borrar.php" method="POST">
+              <label>Codigo del Producto:</label>
+              <input type="text" class="controles" id="codigo" placeholder="Ingrese el codigo del producto" name="codigo">
+              <button type="submit" class="btn btn-primary">Consultar Producto</button>
+              <!-- <a class="btn btn-danger" href="index.html" role="button">Volver</a> -->
+          </form>
+          <label>Nombre del Producto:</label>
+          <input type="text" class="controles" id="nombre" name="nombre" readonly>
+          <label>Marca del Producto:</label>
+          <input type="text" class="controles" id="marca" name="marca" readonly>
+          <label>Precio del Producto:</label>
+          <input type="text" class="controles" id="precio" name="precio" readonly>
+          <label>Cantidad de Producto comprado:</label>
+          <input type="text" class="controles" id="cantidad" name="cantidad" readonly>
         </section>
         <br>
+
     </main>
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <footer id="footer">
       <p class="pie">
@@ -168,5 +83,8 @@
 =======
     <footer id="footer"></footer>
 >>>>>>> Stashed changes
+=======
+    <footer id="footer" id="footer"></footer>
+>>>>>>> 2_GAT_Todo
 </body>
 </html>
