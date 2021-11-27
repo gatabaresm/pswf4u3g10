@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNAD - F4U3 - Diseño e implementacion backend - 2021 - Registrar Producto</title>
+    <title>UNAD - F4U3 - Diseño e implementacion backend - 2021 - Modificar Producto</title>
     <meta name="description" content="El propósito de este sitio es Implementar sitios web interactivos haciendo uso de lenguajes de programación web del lado del servidor, bases de datos y librerías para la ejecución proyectos web que den solución a problemáticas planteadas."/>
     <meta name="keywords" content="aplicativo, javascript, frameworks, proyecto web, etiquetas, HTML, Bootstrap, PHP, MySQL"/>
     <link rel="stylesheet" href="css/estilos.css">
@@ -23,8 +23,26 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+    <script> 
+      $(function(){
+        $("#header").load("../header.html"); 
+        $("#footer").load("../footer.html"); 
+        $("#nav").load("nav.html"); 
+      });
+    </script>
 </head>
 <body>
+    <link rel="stylesheet" href="../css/estilos2.css">
+    <header class="container" id="header"></header>
+
+    <section id="nav"></section>
+
+<main class="container">
 
  <?php
 
@@ -36,7 +54,7 @@ $marca = $_POST['marca'];
 $precio = $_POST['precio'];
 $cantidad = $_POST['cantidad'];
 
-$sql = "INSERT INTO tabla10 (codigo, nombre, marca, precio, cantidad) VALUES ('$codigo', '$nombre', '$marca', '$precio', '$cantidad')";
+$sql = "UPDATE tabla10 SET nombre='$nombre', marca='$marca', precio='$precio', cantidad='$cantidad'  WHERE codigo='$codigo'";
 
 if (mysqli_query($conn, $sql)) {
 
@@ -47,15 +65,15 @@ if (mysqli_query($conn, $sql)) {
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Excelente</h4>
-          <button class="close" onclick="location.href='../registrar.html'">&times;</button>
+          <button class="close" onclick="location.href='../modificar.html'">&times;</button>
         </div>
         <!-- Modal body -->
         <div class="modal-body">
-          Producto Registrado Safisfactoriamente
+          Producto Modificado Safisfactoriamente
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-danger" onclick="location.href='../registrar.html'">Cerrar</button>
+          <button class="btn btn-danger" onclick="location.href='../modificar.html'">Cerrar</button>
         </div>
       </div>
     </div>
@@ -69,7 +87,7 @@ if (mysqli_query($conn, $sql)) {
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Error</h4>
-          <button class="close" onclick="location.href='../registrar.html'">&times;</button>
+          <button class="close" onclick="location.href='../modificar.html'">&times;</button>
         </div>
         <!-- Modal body -->
         <div class="modal-body">
@@ -79,7 +97,7 @@ if (mysqli_query($conn, $sql)) {
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-danger" onclick="location.href='../registrar.html'">Cerrar</button>
+          <button class="btn btn-danger" onclick="location.href='../modificar.html'">Cerrar</button>
         </div>
       </div>
     </div>
@@ -87,12 +105,9 @@ if (mysqli_query($conn, $sql)) {
 }
 mysqli_close($conn);
 ?>
-<<<<<<< Updated upstream
-=======
 
 </main>
 <footer id="footer"></footer>
 
->>>>>>> Stashed changes
 </body>
 </html>

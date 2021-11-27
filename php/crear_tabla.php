@@ -84,5 +84,12 @@ if (mysqli_query($conn, $sql)) {
  }
  mysqli_close($conn);
  ?>
+<<<<<<< Updated upstream
+=======
+
+</main>
+<footer id="footer"></footer>
+
+>>>>>>> Stashed changes
 </body>
 </html>
