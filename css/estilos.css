@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color:whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    color: rgb(14, 33, 138);
+}
+
+nav{
+    background-color:aqua;
+    padding: 10px;
+}
+
+#sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 2px solid #4CAF50;
+  }
+
+div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+article{
+    grid-column: 1/10;
+    background-color: rgb(243, 212, 145);
+    color: black;
+    padding: 1em;
+}
+
+aside{
+    text-align: center;
+    grid-column: 10/13;
+    color: maroon;
+    background-color: rgb(247, 157, 23);
+    padding: 1em;
+}
+
+footer{
+    color: rgb(134, 132, 131);
+    background-color: rgb(17, 17, 17);
+    padding: 20px;
+}
+
+.pie{
+    text-align: center;
+}
+
+/* Tema 2 */
+
+.colordetexto{
+    color: red;
+}
+
+a.link1:link {color:blue;}
+a.link1:visited {color:green;}
+a.link1:hover {color:darkviolet;}
+
+a.link2:link {color:blue;}
+a.link2:visited {color:green;}
+a.link2:hover {font-size:150%;}
+
+a.link3:link {color:blue;}
+a.link3:visited {color:green;}
+a.link3:hover {background:greenyellow;}
+
+a.link4:link {color:blue;}
+a.link4:visited {color:green;}
+a.link4:hover {font-family:monospace;}
+
+a.link5:link {color:blue; text-decoration:none;}
+a.link5:visited {color:green; text-decoration:none;}
+a.link5:hover {text-decoration:underline;}
+
+ul.circulo {
+    list-style-type: circle;
+  }
+
+ul.cuadrado {
+    list-style-type: square;
+}
+
+ol.ALFA {
+    list-style-type: upper-roman;
+  }
+
+ol.minusculas {
+    list-style-type: lower-alpha;
+}
+
+#tabla1 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+#tabla1, #tabla1 th, #tabla1 td{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+    border: 5px solid darkgreen;
+}
+
+div.static {
+    position: static;
+    border: 3px solid green;
+  }
+
+div.relative {
+position: relative;
+left: 60px;
+border: 3px solid green;
+}
+
+div.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    border: 3px solid green;
+  }
+
+#overflowTest {
+background: #4CAF50;
+color: white;
+padding: 15px;
+width: 50%;
+height: 100px;
+overflow: scroll;
+border: 1px solid #ccc;
+}
+
+#img1 {
+    float: right;
+  }
+  
+#img2 {
+float: left;
+}
+
+#div1 {
+    width:100px;
+    float: left;
+    padding: 5px;
+    background: red;
+}
+
+#div2 {
+    width:100px;
+    float: left;
+    padding: 5px;
+    background: yellow;
+}
+
+#div3 {
+    width:100px;
+    float: left;
+    padding: 5px;
+    background: green;
+}
+
+.margen{
+    margin: auto;
+    background: gold;
+    width: 33%;
+}
+
+
+/* Menu */
+
+.menu-area a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background:rgb(11, 99, 231);
+    height: 50px;
+    text-decoration: none;
+}
+
+.menu-area a:hover {
+    background-color: rgb(14, 33, 138);
+    color: #fff;
+
+}
+
+.menu-area ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu-area li {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.menu-area li:hover .dropdown-1>li {
+    top: 0;
+    display: block;
+}
+
+.dropdown-1 li {
+    display: none;
+    position: relative;
+}
+
+.dropdown-1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dropdown-1 li:hover {
+    display: block;
+}
+
+/* Responsive */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  @media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+  }
+
+/*Estilos formulario Consultar*/
+.consultar-producto{
+    width:800px;
+    padding: 30px;
+    margin:auto;
+    margin-top: 10;
+    border-radius: 4px;
+    font-family: "calibri";
+    background-color: rgb(219, 198, 141);
+}
+
+.boton {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    color: white;
+    margin: 16px 0;
+    font-size: 20px;
+    background-color: rgb(43, 42, 42);
+}
+
+.controles_consultar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-family: "calibri";
+    font-size: 18px;
+  
+}
+
+.consultar-producto h4 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    text-align: center;
+  
+}
+
+/*Estilos formulario Borrar*/
+.borrar-producto{
+    width:800px;
+    padding: 30px;
+    margin:auto;
+    margin-top: 10;
+    border-radius: 4px;
+    font-family: "calibri";
+    background-color: rgb(219, 198, 141);
+}
+
+.boton {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    color: white;
+    margin: 16px 0;
+    font-size: 20px;
+    background-color: rgb(43, 42, 42);
+}
+
+.controles_borrar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-family: "calibri";
+    font-size: 18px;
+  
+}
+
+.borrar-producto h4 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    text-align: center;
+  
+}
+
+/* aporte de Guillermo Castaño*/
+  /*estilos de pagina "registrar producto"*/*
+  
+  .registrar-producto{
+    width:400px;
+    padding: 30px;
+    margin:auto;
+    margin-top: 10;
+    border-radius: 4px;
+    font-family: "calibri";
+    background-color: rgb(219, 198, 141);
+
+}
+
+.registrar-producto h4 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.controles {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-family: "calibri";
+    font-size: 18px;
+
+}
+
+.boton {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    color: white;
+    margin: 16px 0;
+    font-size: 20px;
+    background-color: rgb(43, 42, 42);
+}
+
+.modificar-producto{
+    width:800px;
+    padding: 30px;
+    margin:auto;
+    margin-top: 10;
+    border-radius: 4px;
+    font-family: "calibri";
+    background-color: rgb(219, 198, 141);
+
+}
+
+.controles_modificar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-family: "calibri";
+    font-size: 18px;  
+}
+
+.boton_modificar {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    color: white;
+    margin: 16px 0;
+    font-size: 20px;
+    background-color: rgb(43, 42, 42);
+}
+
+
+/*estilos de pagina "modificar producto"*/

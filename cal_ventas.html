@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNAD - F4U3 - Diseño e implementacion backend - 2021 - Registrar Producto</title>
+    <meta name="description" content="El propósito de este sitio es Implementar sitios web interactivos haciendo uso de lenguajes de programación web del lado del servidor, bases de datos y librerías para la ejecución proyectos web que den solución a problemáticas planteadas."/>
+    <meta name="keywords" content="aplicativo, javascript, frameworks, proyecto web, etiquetas, HTML, Bootstrap, PHP, MySQL"/>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+    <script> 
+      $(function(){
+        $("#header").load("header.html"); 
+        $("#footer").load("footer.html"); 
+        $("#nav").load("nav.html"); 
+      });
+    </script>
+</head>
+<body>
+    <header class="container" id="header"></header>
+
+    <section id="nav"></section>
+
+      <script>
+        function calcular(){
+            var a = document.f1.a.value;
+            var b = document.f1.b.value;
+            var c = document.f1.c.value;
+            var r1 = document.f1.d.value;
+            var r2 = document.f1.e.value;
+          r1=parseFloat(a)+(parseFloat(a)*(parseFloat(b)/100))+(parseFloat(a)*(parseFloat(c)/100));
+          r2=parseFloat(a)*(parseFloat(b)/100);
+          document.f1.d.value=r1;
+          document.f1.e.value=r2;
+        }
+         </script>
+
+      <main class="container">
+            <br>
+            <section class="registrar-producto">
+              <h4>Calcular Precio Venta</h4>
+              <form name="f1" action="calculadora.html" method="POST">
+                  <label for="Valor de la Compra">Valor de la compra $:</label>
+                  <input type="text" class="form-control" id="a" placeholder="Ingrese el valor de la compra" name="a">
+                  <label for="% Utilidad">% de utilidad:</label>
+                  <input type="text" class="form-control" id="b" placeholder="Ingrese el porcentaje de la utilidad" name="b"><br/>
+                  <label for="% IVA">% del IVA:</label>
+                  <input type="text" class="form-control" id="c" placeholder="Ingrese el porcentaje del IVA" name="c">
+                  <br/>
+                  <input type="Button" name="" value="Calcular" onclick="calcular()" class="btn btn-primary">
+                  <input type="Button" name="" value="Limpiar" onclick="reset()" class="btn btn-primary">
+                  <br/><br/>
+                  <label for="resultado1">Valor de venta $:</label>
+                  <input type="text" class="form-control" id="d" name="d" placeholder="Este es el precio de venta">
+                  <label for="resultado2">Ganancia $:</label>
+                  <input type="text" class="form-control" id="e" name="e" placeholder="Este es la Ganancia">
+                  <br/>
+                </form>
+            </section>
+            <br>
+    </main>
+
+    <footer id="footer" id="footer"></footer>
+</body>
+</html>
